@@ -18,26 +18,21 @@ function draw() {
 
 }
 
+mySort();
 
-selectionSort();
 
-function swap(items, firstValue, secondValue){
-    var temp = items[firstValue];
-    items[firstValue] = items[secondValue];
-    items[secondValue] = temp;
-}
+function mySort(items){
 
-function selectionSort(items){
-
+    var length = items.length
     var min;
 
-    for (i=0; i < items.length; i++){
+    for (i = 0; i < length; i++){
 
         //set minimum to this position
         min = i;
 
         //check the rest of the array to see if anything is smaller
-        for (j=i+1; j < items.length; j++){
+        for (j = (i + 1); j < length; j++){
             if (items[j] < items[min]){
                 min = j;
             }
@@ -50,4 +45,10 @@ function selectionSort(items){
     }
 
     console.log(items);
+}
+
+function swap(items, firstValue, secondValue){
+    var temp = items[firstValue];
+    items[firstValue] = items[secondValue];
+    items[secondValue] = temp;
 }
