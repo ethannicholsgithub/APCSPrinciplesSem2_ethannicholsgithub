@@ -1,5 +1,6 @@
 
-var items = [4, 1, 2, 11, 17, 9, 16, 10, 5, 15, 20, 6, 18, 8, 12, 13, 14, 7, 3, 19];
+var a = [3,1,4,2,5];
+var b = [3,1,4,2,5];
 
 
 //  This is a comment
@@ -9,8 +10,10 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
   fill(200, 30, 150);
-  console.log(items);
+  console.log(a);
   mySort();
+  console.log(b);
+  bubbleSort();
 
 }
 
@@ -24,7 +27,7 @@ function draw() {
 
 function mySort(){
 
-    var length = items.length
+    var length = a.length
     var min;
 
     for (i = 0; i < length; i++){
@@ -34,22 +37,33 @@ function mySort(){
 
         //check the rest of the array to see if anything is smaller
         for (j = (i + 1); j < length; j++){
-            if (items[j] < items[min]){
+            if (a[j] < a[min]){
                 min = j;
             }
         }
 
         //if the minimum isn't in the position, swap it
         if (i != min){
-            swap(items, i, min);
+            swap(a, i, min);
         }
     }
 
-    console.log(items);
+    console.log(a);
 }
 
-function swap(items, firstValue, secondValue){
-    var temp = items[firstValue];
-    items[firstValue] = items[secondValue];
-    items[secondValue] = temp;
+function swap(a, firstValue, secondValue){
+    var temp = a[firstValue];
+    a[firstValue] = a[secondValue];
+    a[secondValue] = temp;
 }
+
+function bubbleSort(){
+  for(i = 0; i < b.length; i++){
+      if (b[j] > b[j+1]) {
+        var temp = b[j];
+        b[j] = b[j+1];
+        b[j+1] = temp;
+      }
+    }
+    console.log(b);
+  }
