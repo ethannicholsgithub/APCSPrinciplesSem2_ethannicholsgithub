@@ -41,25 +41,25 @@ function randomArray(length){
 
 function mySort(){
 
-    var length = array.length
-    var min;
+  var length = array.length
+  var min;
 
-    for (i = 0; i < length; i++){
-        //set minimum to this position
-        min = i;
-        //check the rest of the array to see if anything is smaller
-        for (j = (i + 1); j < length; j++){
-            if (array[j] < array[min]){
-                min = j;
-            }
-        }
-        //if the minimum isn't in the position, swap it
-        if (i != min){
-            swap(array, i, min);
-            numOfSelecSort = numOfSelecSort + 1;
-        }
-    }
-    console.log(array);
+  for (i = 0; i < length; i++){
+      //set minimum to this position
+      min = i;
+      //check the rest of the array to see if anything is smaller
+      for (j = (i + 1); j < length; j++){
+          if (array[j] < array[min]){
+              min = j;
+          }
+      }
+      //if the minimum isn't in the position, swap it
+      if (i != min){
+          swap(array, i, min);
+          numOfSelecSort = numOfSelecSort + 1;
+      }
+  }
+  console.log(array);
 }
 
 function swap(a, firstValue, secondValue){
