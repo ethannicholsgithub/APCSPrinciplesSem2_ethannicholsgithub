@@ -5,7 +5,7 @@ var array2 = [];
 var numOfSelecSort = 0;
 var numOfBubbleSort = 0;
 
-var n = 10
+var n = 50
 
 //  This is a comment
 //  The setup function function is called once when your program begins
@@ -56,7 +56,7 @@ function mySort(){
       //if the minimum isn't in the position, swap it
       if (i != min){
           swap(array, i, min);
-          numOfSelecSort = numOfSelecSort + 1;
+          numOfSelecSort++;
       }
   }
   console.log(array);
@@ -75,7 +75,7 @@ function bubbleSort(){
         var lemp = array2[j];
         array2[j] = array2[j-1];
         array2[j-1] = lemp;
-        numOfBubbleSort = numOfBubbleSort + 1;
+        numOfBubbleSort++;
       }
     }
   }
