@@ -1,6 +1,6 @@
 var data = [];
 function preload(){
-  data = loadJSON("population.json");
+  data = loadJSON("data.json");
 }
 
 //  This is a comment
@@ -29,15 +29,15 @@ function mySort(data){
       min = i;
       //check the rest of the array to see if anything is smaller
       for (j = (i + 1); j < length; j++){
-          if (array[j] < array[min]){
+          if (data.murder[j] < data.murder[min]){
               min = j;
           }
       }
       //if the minimum isn't in the position, swap it
       if (i != min){
-          swap(array, i, min);
+          swap(data.murder, i, min);
           numOfSelecSort++;
       }
   }
-  console.log(array);
+  console.log(data.murer);
 }
