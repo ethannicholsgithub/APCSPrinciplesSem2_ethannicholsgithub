@@ -24,6 +24,11 @@ function Ball(location, velocity, radius, col){
   // This function changes the location of the ball
   // by adding speed to x and
   this.update = function(){
+    var steeringForce = p5.Vector.sub(b1.loc, this.loc);
+    // steeringForce.normalize();
+    // steeringForce.mult(0.5);
+    this.vel.add(this.steeringForce);
+    this.loc.add(this.vel);
     this.acc.add(this.vel);
   }
 
@@ -38,7 +43,11 @@ function Ball(location, velocity, radius, col){
   // render() draws the ball at the new location
   this.render = function(){
     fill(this.col);
-    ellipse(this.loc.x, this.loc.y, this.rad, this.rad);
+    stroke(255, 0, 0);
+    for(i = 0; i < balls.length; i++){
+      line(this.loc.x, this.loc.y, balls[i].loc.x, balls[i].loc.y);
+
+    }
   }
 
 }
