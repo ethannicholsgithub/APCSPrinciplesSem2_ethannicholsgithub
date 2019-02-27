@@ -45,6 +45,7 @@ function Ball(location, velocity, radius, col){
     fill(this.col);
     stroke(255, 0, 0);
     for(i = 0; i < balls.length; i++){
+      var dist = sqrt(Math.pow((balls[i].loc.x - this.loc.x), 2) + Math.pow((balls[i].loc.y - this.loc.y), 2));
       line(this.loc.x, this.loc.y, balls[i].loc.x, balls[i].loc.y);
 
     }
