@@ -25,8 +25,6 @@ function Ball(location, velocity, radius, col){
   // by adding speed to x and
   this.update = function(){
     var steeringForce = p5.Vector.sub(b1.loc, this.loc);
-    // steeringForce.normalize();
-    // steeringForce.mult(0.5);
     this.vel.add(this.steeringForce);
     this.loc.add(this.vel);
     this.acc.add(this.vel);
@@ -42,12 +40,22 @@ function Ball(location, velocity, radius, col){
 
   // render() draws the ball at the new location
   this.render = function(){
-    fill(this.col);
-    stroke(255, 0, 0);
-    for(i = 0; i < balls.length; i++){
-      var dist = sqrt(Math.pow((balls[i].loc.x - this.loc.x), 2) + Math.pow((balls[i].loc.y - this.loc.y), 2));
-      line(this.loc.x, this.loc.y, balls[i].loc.x, balls[i].loc.y);
+    var ratio = ((width/2) / 255);
+    var ballDist = int(dist(this.loc.x, this.loc.y, width/2, height/2))
+    var alpha = int(ballDist / ratio);
+    var newColor = color(red(this.col), green(this.col), blue(this.col), alpha);
 
+
+    fill(newColor);
+    ellipse(this.loc.x, this.loc.y, radius, radius);
+
+    for(i = 0; i < balls.length; i++){
+      var d = int(dist(this.loc.x, this.loc.y, balls[i].loc.x, balls[i].loc.y));
+      if(d < radius){
+        line(this.loc.x, this.loc.y, balls[i].loc.x, balls[i].loc.y);
+        stroke(200, 75, 0);
+
+      }
     }
   }
 
