@@ -40,21 +40,23 @@ function Ball(location, velocity, radius, col){
 
   // render() draws the ball at the new location
   this.render = function(){
+    noStroke();
     var ratio = ((width/2) / 255);
     var ballDist = int(dist(this.loc.x, this.loc.y, width/2, height/2))
     var alpha = int(ballDist / ratio);
     var newColor = color(red(this.col), green(this.col), blue(this.col), alpha);
+    var r = 5
 
 
     fill(newColor);
-    ellipse(this.loc.x, this.loc.y, radius, radius);
+    ellipse(this.loc.x, this.loc.y, r, r);
 
     for(i = 0; i < balls.length; i++){
       var d = int(dist(this.loc.x, this.loc.y, balls[i].loc.x, balls[i].loc.y));
       if(d < radius){
         line(this.loc.x, this.loc.y, balls[i].loc.x, balls[i].loc.y);
-        stroke(200, 75, 0);
-
+        stroke(255, 0, 0, alpha);
+        strokeWeight(5);
       }
     }
   }
