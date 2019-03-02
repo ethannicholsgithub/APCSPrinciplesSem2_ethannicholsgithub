@@ -41,11 +41,11 @@ function Ball(location, velocity, radius, col){
   // render() draws the ball at the new location
   this.render = function(){
     noStroke();
-    var ratio = (width) / 255;
+    var ratio = (width/2) / 255;
     var ballDist = int(dist(this.loc.x, this.loc.y, width/2, height/2))
     var alpha = int(ballDist / ratio);
     var newColor = color(red(this.col), green(this.col), blue(this.col), alpha);
-    var r = 30
+    var r = 20
 
 
     fill(newColor);

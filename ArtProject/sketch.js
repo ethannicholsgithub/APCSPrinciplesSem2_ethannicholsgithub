@@ -7,12 +7,14 @@ var toggle = true;
 // put setup code here
 function setup() {
   img = loadImage('SIVA.png');
-  var cnv = createCanvas(800, 800);
+  var cnv = createCanvas(1440, 900);
   cnv.position((windowWidth-width)/2, 30);
+  angleMode(DEGREES);
   background(20,20,20);
-  loadBalls(70);
+  loadBalls(150);
   b1 = new Ball(createVector(width / 2, height / 2), createVector(0 , 0), 25, color(255, 0, 0))
-  frameRate(60);
+  frameRate(200);
+  rectMode(CENTER)
 
 
 
@@ -20,9 +22,7 @@ function setup() {
 
 function draw() {
   if(toggle){
-    background(0,0,0);
-
-    image(img, 250, 250, img.width / 4, img.height / 4);
+    background(0,0,0,);
 
     for(var i = 0; i < balls.length; i = i + 1){
         balls[i].run();
@@ -35,8 +35,8 @@ function loadBalls(numBalls){
     for(var i = 0; i < numBalls; i++){
 
         var loc = createVector(random(width), random(height));
-        var vel = createVector(random(-3,3), random(-3,3));
-        var radius = random(100, 150);
+        var vel = createVector(random(-5,5), random(-5,5));
+        var radius = random(50, 150);
         var col = color(255,0,0);
 
         balls.push(new Ball(loc, vel, radius, col));
