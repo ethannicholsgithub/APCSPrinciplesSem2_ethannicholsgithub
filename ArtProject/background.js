@@ -55,7 +55,7 @@ function Ball(location, velocity, radius, col){
       var d = int(dist(this.loc.x, this.loc.y, balls[i].loc.x, balls[i].loc.y));
       if(d < radius){
         line(this.loc.x, this.loc.y, balls[i].loc.x, balls[i].loc.y);
-        stroke(255, 0, 10, alpha);
+        stroke(255, 0, 0, alpha);
         strokeWeight(5);
       }
     }
