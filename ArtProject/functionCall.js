@@ -5,15 +5,14 @@ var toggle = true;
 
 // put setup code here
 function setup() {
-  img = loadImage('SIVA.png');
+
   var cnv = createCanvas(1920, 1160);
   cnv.position((windowWidth-width)/2, 30);
-  angleMode(DEGREES);
+
   background(20,20,20);
   loadBalls(200);
   b1 = new Ball(createVector(width / 2, height / 2), createVector(0 , 0), 25, color(255, 0, 0))
   frameRate(200);
-  rectMode(CENTER);
 
 
 
