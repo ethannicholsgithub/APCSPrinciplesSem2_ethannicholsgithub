@@ -6,7 +6,7 @@ var toggle = true;
 // put setup code here
 function setup() {
 
-  var cnv = createCanvas(1920, 1160);
+  var cnv = createCanvas(1920, 1080);
   cnv.position((windowWidth-width)/2, 30);
 
   background(20,20,20);
@@ -26,6 +26,7 @@ function draw() {
         balls[i].run();
     }
   }
+  fill(255,255,255);
 }
 
 function loadBalls(numBalls){
