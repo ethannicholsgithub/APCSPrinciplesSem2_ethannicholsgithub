@@ -2,7 +2,11 @@
 //  This is a comment
 //  The setup function function is called once when your program begins
 var player;
+var playerX = 400;
+var playerY = 400;
+
 var speed = 2;
+var gravity = 0.1
 
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -21,36 +25,36 @@ function setup() {
 //  The draw function is called @ 30 fps
 function draw() {
   player.run();
+  keyPressed();
+
 }
 
 function loadPlayer() {
-  let loc = createVector(400, 400);
+  let loc = createVector(400,400);
   let vel = createVector(0, 0);
   let col = color(255, 0, 0);
   player = new Player(loc, vel, col);
 }
 
 function keyPressed(){
-
   //if function for if UPARROW is pressed
-  if(keyCode === 38){
-    player.vel = createVector(0, -speed);
-  }else{
-    player.vel = createVector(0, 0);
+  if(keyIsDown(40)){
+    player.loc.y += 5;
   }
 
   //if function for if DOWNARROW is pressed
-  if(keyCode === 40){
-    player.vel = createVector(0, speed);
+  if(keyIsDown(38)){
+    player.loc.y -= 5;
   }
 
   //if function for if RIGHTARROW is pressed
-  if(keyCode === 39){
-    player.vel = createVector(speed, 0);
+  if(keyIsDown(39)){
+    player.loc.x += 5;
   }
 
   //if function for if LEFTARRROW is pressed POGGGGG
-  if(keyCode === 37){
-    player.vel = createVector(-speed, 0);
+  if(keyIsDown(37)){
+    player.loc.x -= 5;
   }
+
 }

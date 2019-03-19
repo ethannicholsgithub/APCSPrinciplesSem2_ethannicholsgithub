@@ -10,10 +10,17 @@ function Player(loc, vel, col){
   }
 
   this.update = function(){
-    this.loc.x = this.loc.x + this.vel.x;
-    this.loc.y = this.loc.y + this.vel.y;
-    this.loc.add(this.vel);
+    // Add speed to location
+      this.y = this.y + this.speed;
 
+      // Add gravity to speed
+      this.speed = this.speed + gravity;
+
+      // If square reaches the bottom
+      // Reverse speed
+      if (this.y > height) {
+        this.speed = this.speed * -0.95;
+      }
   }
 
   this.checkedges = function(){
