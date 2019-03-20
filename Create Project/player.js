@@ -1,7 +1,8 @@
 function Player(loc, vel, col){
   this.loc = loc;
   this.vel = vel;
-  this.col = col
+  this.col = col;
+  this.speed = .0;
 
   this.run = function() {
     this.render();
@@ -11,20 +12,16 @@ function Player(loc, vel, col){
 
   this.update = function(){
     // Add speed to location
-      this.y = this.y + this.speed;
+    this.loc.y = this.loc.y + this.speed;
 
-      // Add gravity to speed
-      this.speed = this.speed + gravity;
-
-      // If square reaches the bottom
-      // Reverse speed
-      if (this.y > height) {
-        this.speed = this.speed * -0.95;
-      }
+    // Add gravity to speed
+    this.speed = this.speed + gravity;
   }
 
   this.checkedges = function(){
-
+    if (this.loc.y > (ground.loc.y - 20)) {
+      this.speed = this.speed * -.005;
+    }
   }
 
   this.render = function(){

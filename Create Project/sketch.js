@@ -2,10 +2,8 @@
 //  This is a comment
 //  The setup function function is called once when your program begins
 var player;
-var playerX = 400;
-var playerY = 400;
+var ground;
 
-var speed = 2;
 var gravity = 0.1
 
 function setup() {
@@ -17,13 +15,17 @@ function setup() {
   rectMode(CENTER);
 
   loadPlayer();
-
+  loadEnvironment();
 
 
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
+  background(0,0,0, 10);
+  noStroke();
+
+  ground.run();
   player.run();
   keyPressed();
 
@@ -34,6 +36,12 @@ function loadPlayer() {
   let vel = createVector(0, 0);
   let col = color(255, 0, 0);
   player = new Player(loc, vel, col);
+}
+
+function loadEnvironment() {
+  let loc = createVector(400,700);
+  let col2 = color(0, 255, 0);
+  ground = new Environment(loc, col2);
 }
 
 function keyPressed(){
