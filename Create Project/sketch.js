@@ -4,7 +4,7 @@
 var player;
 var ground;
 
-var gravity = 0.1
+var gravity = 0.3
 
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -29,6 +29,10 @@ function draw() {
   player.run();
   keyPressed();
 
+  console.log(player.touch);
+
+
+
 }
 
 function loadPlayer() {
@@ -45,16 +49,6 @@ function loadEnvironment() {
 }
 
 function keyPressed(){
-  //if function for if UPARROW is pressed
-  if(keyIsDown(40)){
-    player.loc.y += 5;
-  }
-
-  //if function for if DOWNARROW is pressed
-  if(keyIsDown(38)){
-    player.loc.y -= 5;
-  }
-
   //if function for if RIGHTARROW is pressed
   if(keyIsDown(39)){
     player.loc.x += 5;
@@ -63,6 +57,10 @@ function keyPressed(){
   //if function for if LEFTARRROW is pressed POGGGGG
   if(keyIsDown(37)){
     player.loc.x -= 5;
+  }
+
+  if(keyIsDown(32)){
+    player.loc.y -= gravity + 20;
   }
 
 }
