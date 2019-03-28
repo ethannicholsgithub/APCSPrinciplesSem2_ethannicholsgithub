@@ -20,7 +20,8 @@ function Player(loc, vel, col){
   }
 
   this.checkedges = function(){
-    if (this.loc.y + 20 > (ground.loc.y - 20) && this.loc.y < (ground.loc.y + 20) && this.loc.x < ground.loc.x + 50 && this.loc.x > ground.loc.x - 50){
+    if (this.loc.y + 20 > (ground.loc.y - ground.h/2) && this.loc.y < (ground.loc.y + ground.h/2) && this.loc.x < ground.loc.x + ground.w/2
+    && this.loc.x > (ground.loc.x - gorund.w/2)){
       this.speed = this.speed * -.005;
       this.touch = true;
     }else{

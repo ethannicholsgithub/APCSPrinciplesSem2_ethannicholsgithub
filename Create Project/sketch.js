@@ -44,6 +44,8 @@ function loadPlayer() {
 
 function loadEnvironment() {
   let loc = createVector(400,700);
+  let w = 800;
+  let h = 40;
   let col2 = color(0, 255, 0);
   ground = new Environment(loc, col2);
 }
