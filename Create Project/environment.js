@@ -1,8 +1,8 @@
 function Environment(loc, col2, w, h){
   this.loc = loc;
   this.col2 = col2;
-  this.w = w;
-  this.h = h;
+  this.w = random(40, 600);
+  this.h = random(40, 600);
 
   this.run = function() {
     this.render();
