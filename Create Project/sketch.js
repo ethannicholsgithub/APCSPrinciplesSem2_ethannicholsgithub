@@ -4,7 +4,7 @@
 var player;
 var ground;
 
-var gravity = 0.1
+var gravity = .05
 
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -22,12 +22,24 @@ function setup() {
 
 //  The draw function is called @ 30 fps
 function draw() {
-  background(0,0,0);
+  background(0,0,0, 25);
   noStroke();
 
   ground.run();
   player.run();
+
+  if(player.touch === true){
+    if(keyIsDown(32)){
+      player.vel.y -= 100;
+    }
+  }
+
+
   keyPressed();
+
+  console.log(player.touch);
+
+
 
 }
 
@@ -39,7 +51,7 @@ function loadPlayer() {
 }
 
 function loadEnvironment() {
-  let loc = createVector(400,700);
+  let loc = createVector(400, 700);
   let col2 = color(0, 255, 0);
   ground = new Environment(loc, col2);
 }
@@ -54,5 +66,4 @@ function keyPressed(){
   if(keyIsDown(37)){
     player.loc.x -= 5;
   }
-
 }

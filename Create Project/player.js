@@ -2,7 +2,8 @@ function Player(loc, vel, col){
   this.loc = loc;
   this.vel = vel;
   this.col = col;
-  this.speed = .0;
+  this.speed = 1;
+  this.touch = false;
 
   var hit = false;
 
