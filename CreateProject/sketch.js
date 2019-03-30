@@ -17,14 +17,9 @@ var playerKilled = false;
 
 var doubleJump = 0;
 
+var mouseHover = false;
 
 var platformTouched = null;
-
-function preload() {
-  console.log("asdf");
-  myFont = loadFont('http://127.0.0.1:8887/CreateProject/font.otf');
-  console.log(myFont);
-}
 
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -64,18 +59,63 @@ function draw() {
     endGame();
   }
 
-
 }
 
 
 function menu(){
   textSize(100);
-  textFont("Trebuchet MS");
-  text("THING", 400, 100)
+  textFont("Poiret One");
+  fill(255,0,90);
+  text("journey", 250, 400)
+
+  mouseHover = collidePointCircle(mouseX, mouseY, 400, 500, 100);
+
+  if(mouseHover){
+    fill(255,0,90);
+    ellipse(400, 500, 100);
+    fill(0)
+    textSize(32);
+    text("play", 370, 507);
+    //console.log(("clicks"));
+
+  }else{
+    fill(0);
+    stroke(255,0,90);
+    strokeWeight(3);
+    ellipse(400, 500, 100);
+    fill(255,0,90);
+    strokeWeight(0);
+    textSize(32);
+    text("play", 370, 507);
+
+  }
+  
+  stroke(255, 0, 90);
+  strokeWeight(3)
+
 }
 
 
+function level1(){
+  platforms.forEach(function(platform){
+    platform.run();
+  })
 
+  if(playerKilled === false){
+    applyForces();
+
+    movement();
+
+    player.run();
+
+    collisions(player, platforms);
+  }
+
+  if (player.loc.y > 800){
+    playerKilled = true;
+    gameOver = true;
+  }
+}
 
 
 function loadPlayer() {
@@ -174,31 +214,3 @@ function collisions(player, platforms){
       }
   })
 }
-
-
-
-
-
-
-
-
-
-
-// platforms.forEach(function(platform){
-//   platform.run();
-// })
-//
-// if(playerKilled === false){
-//   applyForces();
-//
-//   movement();
-//
-//   player.run();
-//
-//   collisions(player, platforms);
-// }
-//
-// if (player.loc.y > 800){
-//   playerKilled = true;
-//   gameOver = true;
-// }

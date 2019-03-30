@@ -1,11 +1,9 @@
 function Environment(loc, col2, w, h){
   this.loc = loc;
   this.col2 = col2;
-  this.w = random(40, 600);
-  this.h = random(40, 600);
+  this.w = random(100, 200);
+  this.h = random(100, 800);
 
-  var w = 400;
-  var h = 40
 
   this.run = function() {
     this.render();
@@ -14,6 +12,7 @@ function Environment(loc, col2, w, h){
 
   this.render = function(){
     fill(this.col2);
-    rect(this.loc.x, this.loc.y, w, h);
+    rect(this.loc.x, this.loc.y, this.w, this.h, 9);
+
   }
 }
