@@ -22,7 +22,7 @@ function setup() {
 
 //  The draw function is called @ 30 fps
 function draw() {
-  background(0,0,0, 10);
+  background(0,0,0);
   noStroke();
 
   ground.run();
@@ -45,16 +45,6 @@ function loadEnvironment() {
 }
 
 function keyPressed(){
-  //if function for if UPARROW is pressed
-  if(keyIsDown(40)){
-    player.loc.y += 5;
-  }
-
-  //if function for if DOWNARROW is pressed
-  if(keyIsDown(38)){
-    player.loc.y -= 5;
-  }
-
   //if function for if RIGHTARROW is pressed
   if(keyIsDown(39)){
     player.loc.x += 5;

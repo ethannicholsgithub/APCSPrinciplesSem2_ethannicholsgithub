@@ -4,6 +4,8 @@ function Player(loc, vel, col){
   this.col = col;
   this.speed = .0;
 
+  var hit = false;
+
   this.run = function() {
     this.render();
     this.update();
@@ -19,9 +21,10 @@ function Player(loc, vel, col){
   }
 
   this.checkedges = function(){
-    if (this.loc.y > (ground.loc.y - 20)) {
+    if (hit = collideRectRect(this.loc.x, this.loc.y, 40, 40, ground.loc.x, ground.loc.y, 400, 40) {
       this.speed = this.speed * -.005;
     }
+
   }
 
   this.render = function(){
