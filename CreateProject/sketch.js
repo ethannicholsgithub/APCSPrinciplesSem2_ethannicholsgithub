@@ -703,6 +703,7 @@ function menuButton(){
 }
 
 function toMenu(){
+  fade = 0;
   gameStatus = "MENU" // chenge to level 1
 }
 
