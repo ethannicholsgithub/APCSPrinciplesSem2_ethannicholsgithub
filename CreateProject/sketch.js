@@ -1,37 +1,30 @@
 
+
+
+//---------------------PLAYER VARIABLES--------------------\\
 var player;
-var ground;
-
-var myFont;
-var img;
-
-var platforms = [];
-
 var gravity = .5
 var friction = .9;
-
-var gameStatus = "MENU";
-
 var playerKilled = false;
-
 var doubleJump = 0;
-
-var mouseHover = false;
-
 var platformTouched = null;
 
+//--------------------ENVIRONMENT VARIABLES----------------------\\
+var ground;
+var platforms = [];
+var speed = 1;
+var gameStatus = "MENU";
+
+//-----------------------STYLE VARIABLES--------------------\\
+var myFont;
 var fade = 0;
+var mouseHover = false;
 
+//------------------------PORTAL VARIABLES------------------\\
 var portal = [];
-
 var x = 400
 var portalPosX = 750;
 var portalPosY = 350;
-
-var hit = false;
-
-var speed = 1;
-
 
 
 function setup() {
@@ -57,7 +50,7 @@ function draw() {
   frameRate(60);
   // console.log(player.loc.y);
 
-
+//------------------------GAME STATUS----------------------\\
   if(gameStatus === "MENU"){
     menu();
     fade += 1;
@@ -98,6 +91,8 @@ function draw() {
 
 }
 
+
+//------------------------------LEVEL 7------------------------\\
 function level7(){
   // console.log("level 2");
   platforms.forEach(function(platform){
@@ -130,6 +125,9 @@ function level7(){
   }
 }
 
+
+
+//---------------------------------LEVEL 6------------------------\\
 function level6(){
   // console.log("level 2");
   platforms.forEach(function(platform){
@@ -173,6 +171,9 @@ function level6(){
   }
 }
 
+
+
+//------------------------------LEVEL 5-----------------------\\
 function level5(){
   // console.log("level 2");
   platforms.forEach(function(platform){
@@ -220,6 +221,9 @@ function level5(){
   }
 }
 
+
+
+//-----------------------------LEVEL 4----------------------------\\
 function level4(){
   // console.log("level 2");
   platforms.forEach(function(platform){
@@ -262,6 +266,9 @@ function level4(){
   }
 }
 
+
+
+//--------------------------------LEVEL 3-----------------------\\
 function level3(){
   // console.log("level 2");
   platforms.forEach(function(platform){
@@ -306,6 +313,9 @@ function level3(){
   }
 }
 
+
+
+//----------------------------LEVEL 2-----------------------\\
 function level2(){
   // console.log("level 2");
   platforms.forEach(function(platform){
@@ -353,7 +363,7 @@ function level2(){
 
 
 
-
+//-------------------------LEVEL 1---------------------\\
 function level1(){
   platforms.forEach(function(platform){
     platform.run();
@@ -427,6 +437,8 @@ function menu(){
 
 }
 
+
+
 //----------------------GAME OVER Functions----------------------\\
 
 function endGame(){
@@ -439,7 +451,10 @@ function endGame(){
   menuButton();
 }
 
+
+
 //-------------------------WIN screen functions--------------------\\
+
 function winGame(){
   background(10)
   textSize(100);
@@ -449,7 +464,10 @@ function winGame(){
   menuButton();
 }
 
+
+
 //------------------------instructions----------------------\\
+
 function instructions(){
   textSize(25);
   fill(255,0,90, fade);
@@ -515,6 +533,12 @@ function keyPressed(){// if a key is pressed
   }
 }
 
+
+
+
+
+//------------------------MOVEMENT----------------------------\\
+
 function movement(){
   //if function for if RIGHTARROW is pressed
   if(keyIsDown(39)){
@@ -528,7 +552,11 @@ function movement(){
 
 }
 
-//collision detection
+
+
+
+//--------------------------COLLISION DETECTION-----------------------\\
+
 function collisions(player, platforms){
 
   // set each side to the location and the padding, this is so that detection is easier to read
@@ -570,8 +598,7 @@ function collisions(player, platforms){
     }
   })
 
-  console.log(hit);
-  if(player.loc.y > lava.loc.y - 400){
+  if(player.loc.y + 10 > lava.loc.y - 400){
     playerKilled = true;
     setTimeout(toGameOver, 50)
     //console.log("player dead");
@@ -581,7 +608,12 @@ function collisions(player, platforms){
   }
 }
 
+
+
+
 //-------------------------BUTTONS---------------------------\\
+
+//RESTART BUTTON
 function restartButton(){
   mouseHover = collidePointCircle(mouseX, mouseY, 400, 500, 100); //set mouseHover to true when mouse and circle collide
 
@@ -626,6 +658,8 @@ function restartButton(){
   }
 }
 
+
+//PLAY BUTTON
 function playButton(){
   mouseHover = collidePointCircle(mouseX, mouseY, 400, 500, 100); //set mouseHover to true when mouse and circle collide
 
@@ -672,6 +706,8 @@ function playButton(){
   }
 }
 
+
+//MENU BUTTON
 function menuButton(){
   mouseHover = collidePointCircle(mouseX, mouseY, 400, 650, 100); //set mouseHover to true when mouse and circle collide
 
@@ -707,6 +743,8 @@ function toMenu(){
   gameStatus = "MENU" // chenge to level 1
 }
 
+
+// INSTRUCTIONS BUTTON
 function instructionsButton(){
   if(gameStatus !== "MENU"){
     x = -100;
