@@ -19,6 +19,7 @@ var gameStatus = "MENU";
 var myFont;
 var fade = 0;
 var mouseHover = false;
+var levelChecker = "Level 1"
 
 //------------------------PORTAL VARIABLES------------------\\
 var portal = [];
@@ -61,24 +62,58 @@ function draw() {
   }
   if(gameStatus === "LEVEL_1"){
     level1();
+    
+    noStroke();
+    textSize(25);
+    text(levelChecker, 45, 25);
   }
   if(gameStatus === "LEVEL_2"){
     level2();
+
+    noStroke();
+    levelChecker = "Level 2";
+    textSize(25);
+    text(levelChecker, 45, 25);
   }
   if(gameStatus === "LEVEL_3"){
     level3();
+
+    noStroke();
+    levelChecker = "Level 3";
+    textSize(25);
+    text(levelChecker, 45, 25);
   }
   if(gameStatus === "LEVEL_4"){
     level4();
+
+    noStroke();
+    levelChecker = "Level 4";
+    textSize(25);
+    text(levelChecker, 45, 25);
   }
   if(gameStatus === "LEVEL_5"){
     level5();
+
+    noStroke();
+    levelChecker = "Level 5";
+    textSize(25);
+    text(levelChecker, 45, 25);
   }
   if(gameStatus === "LEVEL_6"){
     level6();
+
+    noStroke();
+    levelChecker = "Level 6";
+    textSize(25);
+    text(levelChecker, 45, 25);
   }
   if(gameStatus === "LEVEL_7"){
     level7();
+
+    noStroke();
+    levelChecker = "Level 7";
+    textSize(25);
+    text(levelChecker, 45, 25);
   }
   if(gameStatus === "GAMEOVER"){
     endGame();
@@ -700,6 +735,7 @@ function playButton(){
       platforms.push(new Environment(createVector(0, 450)));
       platforms.push(new Environment(createVector(400, 450)));
       platforms.push(new Environment(createVector(800, 450)));
+
 
       gameStatus = "LEVEL_1" // chenge to level 1
     }
