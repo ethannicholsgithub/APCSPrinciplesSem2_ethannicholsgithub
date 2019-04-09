@@ -62,7 +62,7 @@ function draw() {
   }
   if(gameStatus === "LEVEL_1"){
     level1();
-    
+
     noStroke();
     textSize(25);
     text(levelChecker, 45, 25);
@@ -115,6 +115,14 @@ function draw() {
     textSize(25);
     text(levelChecker, 45, 25);
   }
+  if(gameStatus === "LEVEL_8"){
+    level8();
+
+    noStroke();
+    levelChecker = "Level 8";
+    textSize(25);
+    text(levelChecker, 45, 25);
+  }
   if(gameStatus === "GAMEOVER"){
     endGame();
     fade += 2.75;
@@ -128,6 +136,41 @@ function draw() {
 
 
 //------------------------------LEVEL 7------------------------\\
+function level8(){
+  // console.log("level 2");
+  platforms.forEach(function(platform){
+    platform.run();
+  })
+
+  for(var i = 0; i < portal.length; i++){
+    portal[i].run();
+  }
+
+  if(playerKilled === false){
+    applyForces();
+
+    movement();
+
+    player.run();
+
+    collisions(player, platforms);
+
+    lava.run();
+  }
+
+  var done = collideRectCircle(player.loc.x-20, player.loc.y-20 , 40, 40, portalPosX, portalPosY, 40);
+
+  if(done && gameStatus === "LEVEL_8"){
+    console.log("win");
+    setTimeout(toWin, 100);
+  }
+  function toWin(){
+    gameStatus = "WIN";
+  }
+}
+
+
+//---------------------------------LEVEL 6------------------------\\
 function level7(){
   // console.log("level 2");
   platforms.forEach(function(platform){
@@ -153,13 +196,27 @@ function level7(){
   var done = collideRectCircle(player.loc.x-20, player.loc.y-20 , 40, 40, portalPosX, portalPosY, 40);
 
   if(done && gameStatus === "LEVEL_7"){
-    setTimeout(toWin, 100);
+    setTimeout(toLevel8, 100);
   }
-  function toWin(){
-    gameStatus = "WIN";
+  function toLevel8(){
+    //console.log("next level");
+    gameStatus = "LEVEL_8";
+    player.loc.x = 50
+    player.loc.y = 600
+    portalPosX = 50;
+    portalPosY = 75;
+    lava.loc.y = 1200;
+    speed = 1.85
+
+    platforms = [];
+    platforms.push(new Environment(createVector(0, 700)));
+    platforms.push(new Environment(createVector(800, 550)));
+    platforms.push(new Environment(createVector(0, 400)));
+    platforms.push(new Environment(createVector(800, 250)));
+    platforms.push(new Environment(createVector(0, 175)));
+
   }
 }
-
 
 
 //---------------------------------LEVEL 6------------------------\\
@@ -198,7 +255,7 @@ function level6(){
     portalPosX = 150;
     portalPosY = 450;
     lava.loc.y = 1200;
-    speed = 4
+    speed = 3.75
 
     platforms = [];
     platforms.push(new Environment(createVector(150, 155)));
@@ -251,7 +308,7 @@ function level5(){
     platforms.push(new Environment(createVector(600, 650)));
     platforms.push(new Environment(createVector(400, 450)));
     platforms.push(new Environment(createVector(150, 375)));
-    platforms.push(new Environment(createVector(400, 155)));
+    platforms.push(new Environment(createVector(400, 200)));
     platforms.push(new Environment(createVector(675, 155)));
   }
 }
@@ -635,7 +692,7 @@ function collisions(player, platforms){
 
   if(player.loc.y + 10 > lava.loc.y - 400){
     playerKilled = true;
-    setTimeout(toGameOver, 50)
+    setTimeout(toGameOver, 25)
     //console.log("player dead");
   }
   function toGameOver(){
