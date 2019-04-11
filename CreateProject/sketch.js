@@ -27,12 +27,20 @@ var x = 400
 var portalPosX = 750;
 var portalPosY = 350;
 
+function preload() {
+  soundFormats('mp3', 'ogg');
+  music = loadSound('http://freesound.org/data/previews/466/466138_9849907-lq.mp3');
+  jumpSound = loadSound('http://freesound.org/data/previews/253/253178_4404552-lq.mp3')
+  deathSound = loadSound('http://freesound.org/data/previews/417/417486_8281056-lq.mp3')
+  nextLevelSound = loadsound('http://freesound.org/data/previews/243/243171_2195044-lq.mp3')
+}
 
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(10);
   fill(200, 0, 0);
+  music.loop();
 
   textFont("Poiret One");
   textAlign(CENTER, CENTER);
@@ -615,6 +623,7 @@ function keyPressed(){// if a key is pressed
   if(keyCode === 32){// if specifically the SPACEBAR is pressed
 
     if(doubleJump < 2){
+      jumpSound.play(0, 1, 0.2);
       doubleJump++; //add one to doubleJump until it is 2
       player.forcey -= 20 //add a bottom force that is greater than gravvity to push the player upward
       /*
@@ -692,6 +701,7 @@ function collisions(player, platforms){
 
   if(player.loc.y + 10 > lava.loc.y - 400){
     playerKilled = true;
+    deathSound.play(0, 1, 0.5);
     setTimeout(toGameOver, 25)
     //console.log("player dead");
   }
