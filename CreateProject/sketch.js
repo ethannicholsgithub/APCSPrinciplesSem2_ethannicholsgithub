@@ -135,7 +135,7 @@ function draw() {
 }
 
 
-//------------------------------LEVEL 7------------------------\\
+//------------------------------LEVEL 8------------------------\\
 function level8(){
   // console.log("level 2");
   platforms.forEach(function(platform){
@@ -170,7 +170,7 @@ function level8(){
 }
 
 
-//---------------------------------LEVEL 6------------------------\\
+//---------------------------------LEVEL 7------------------------\\
 function level7(){
   // console.log("level 2");
   platforms.forEach(function(platform){
