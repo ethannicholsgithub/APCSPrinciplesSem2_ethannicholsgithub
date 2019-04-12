@@ -22,6 +22,9 @@ var mouseHover = false;
 var levelChecker = "Level 1"
 
 var music;
+var jumpSound;
+var deathSound;
+var levelSound;
 
 //------------------------PORTAL VARIABLES------------------\\
 var portal = [];
@@ -33,7 +36,7 @@ var portalRadius = 20;
 
 function preload() {
   soundFormats('mp3', 'ogg');
-  music = loadSound('http://freesound.org/data/previews/466/466138_9849907-lq.mp3');
+  music = loadSound('http://freesound.org/data/previews/329/329953_4548252-lq.mp3');
   jumpSound = loadSound('https://freesound.org/data/previews/350/350898_5450487-lq.mp3')
   deathSound = loadSound('http://freesound.org/data/previews/417/417486_8281056-lq.mp3')
   levelSound = loadSound('http://freesound.org/data/previews/220/220205_4100837-lq.mp3')
@@ -45,9 +48,10 @@ function setup() {
   background(10);
   fill(200, 0, 0);
 
+  music.loop(0,1,0.5)
+
   levelSound.playMode('restart');
 
-  music.loop(0,1,0.8)
 
   textFont("Poiret One");
   textAlign(CENTER, CENTER);
@@ -212,7 +216,7 @@ function level7(){
   var done = collideRectCircle(player.loc.x-20, player.loc.y-20 , 40, 40, portalPosX, portalPosY, portalRadius);
 
   if(done && gameStatus === "LEVEL_7"){
-    setTimeout(toLevel8, 50);
+    setTimeout(toLevel8, 20);
   }
   function toLevel8(){
     levelSound.amp(0.1);
@@ -720,7 +724,7 @@ function collisions(player, platforms){
   if(player.loc.y + 10 > lava.loc.y - 400){
     playerKilled = true;
     deathSound.play(0, 1, 0.5);
-    setTimeout(toGameOver, 25)
+    setTimeout(toGameOver, 50)
     //console.log("player dead");
   }
   function toGameOver(){
