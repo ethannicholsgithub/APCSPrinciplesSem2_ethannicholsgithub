@@ -21,6 +21,8 @@ var fade = 0;
 var mouseHover = false;
 var levelChecker = "Level 1"
 
+var music;
+
 //------------------------PORTAL VARIABLES------------------\\
 var portal = [];
 var x = 400
@@ -32,9 +34,9 @@ var portalRadius = 20;
 function preload() {
   soundFormats('mp3', 'ogg');
   music = loadSound('http://freesound.org/data/previews/466/466138_9849907-lq.mp3');
-  jumpSound = loadSound('http://freesound.org/data/previews/253/253178_4404552-lq.mp3')
+  jumpSound = loadSound('https://freesound.org/data/previews/350/350898_5450487-lq.mp3')
   deathSound = loadSound('http://freesound.org/data/previews/417/417486_8281056-lq.mp3')
-  nextLevelSound = loadsound('http://freesound.org/data/previews/243/243171_2195044-lq.mp3')
+  levelSound = loadSound('http://freesound.org/data/previews/220/220205_4100837-lq.mp3')
 }
 
 function setup() {
@@ -42,7 +44,10 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(10);
   fill(200, 0, 0);
-  music.loop();
+
+  levelSound.playMode('restart');
+
+  music.loop(0,1,0.8)
 
   textFont("Poiret One");
   textAlign(CENTER, CENTER);
@@ -74,6 +79,7 @@ function draw() {
     level1();
 
     noStroke();
+    levelChecker = "Level 1";
     textSize(25);
     text(levelChecker, 45, 25);
   }
@@ -172,7 +178,7 @@ function level8(){
 
   if(done && gameStatus === "LEVEL_8"){
     console.log("win");
-    setTimeout(toWin, 10);
+    setTimeout(toWin, 50);
   }
   function toWin(){
     gameStatus = "WIN";
@@ -206,7 +212,7 @@ function level7(){
   var done = collideRectCircle(player.loc.x-20, player.loc.y-20 , 40, 40, portalPosX, portalPosY, portalRadius);
 
   if(done && gameStatus === "LEVEL_7"){
-    setTimeout(toLevel8, 10);
+    setTimeout(toLevel8, 50);
   }
   function toLevel8(){
     levelSound.amp(0.1);
@@ -216,7 +222,7 @@ function level7(){
     player.loc.x = 50
     player.loc.y = 600
     portalPosX = 50;
-    portalPosY = 75;
+    portalPosY = 80;
     lava.loc.y = 1200;
     speed = 1.85
 
@@ -257,7 +263,7 @@ function level6(){
   var done = collideRectCircle(player.loc.x-20, player.loc.y-20 , 40, 40, portalPosX, portalPosY, portalRadius);
 
   if(done && gameStatus === "LEVEL_6"){
-    setTimeout(toLevel7, 10);
+    setTimeout(toLevel7, 50);
   }
   function toLevel7(){
     levelSound.play(0, 1, 0.4);
@@ -266,7 +272,7 @@ function level6(){
     player.loc.x = 150
     player.loc.y = 55
     portalPosX = 150;
-    portalPosY = 450;
+    portalPosY = 455;
     lava.loc.y = 1200;
     speed = 3.75
 
@@ -304,7 +310,7 @@ function level5(){
   var done = collideRectCircle(player.loc.x-20, player.loc.y-20 , 40, 40, portalPosX, portalPosY, portalRadius);
 
   if(done && gameStatus === "LEVEL_5"){
-    setTimeout(toLevel6, 10);
+    setTimeout(toLevel6, 50);
   }
   function toLevel6(){
     levelSound.play(0, 1, 0.4);
@@ -313,7 +319,7 @@ function level5(){
     player.loc.x = 200
     player.loc.y = 500
     portalPosX = 675;
-    portalPosY = 55;
+    portalPosY = 60;
     lava.loc.y = 1200;
     speed = 3.25
 
@@ -355,14 +361,14 @@ function level4(){
   var done = collideRectCircle(player.loc.x-20, player.loc.y-20 , 40, 40, portalPosX, portalPosY, portalRadius);
 
   if(done && gameStatus === "LEVEL_4"){
-    setTimeout(toLevel5, 10);
+    setTimeout(toLevel5, 50);
   }
   function toLevel5(){
     levelSound.play(0, 1, 0.4);
     //console.log("next level");
     gameStatus = "LEVEL_5";
     player.loc.x = 400
-    player.loc.y = 450
+    player.loc.y = 455
     portalPosX = 400;
     portalPosY = 250;
     lava.loc.y = 1200;
@@ -401,7 +407,7 @@ function level3(){
   var done = collideRectCircle(player.loc.x-20, player.loc.y-20 , 40, 40, portalPosX, portalPosY, portalRadius);
 
   if(done && gameStatus === "LEVEL_3"){
-    setTimeout(toLevel4, 10);
+    setTimeout(toLevel4, 50);
   }
   function toLevel4(){
     levelSound.play(0, 1, 0.4);
@@ -410,7 +416,7 @@ function level3(){
     player.loc.x = 100
     player.loc.y = 500
     portalPosX = 110;
-    portalPosY = 100;
+    portalPosY = 105;
     lava.loc.y = 1200;
     speed = 2.5;
 
@@ -449,7 +455,7 @@ function level2(){
   var done = collideRectCircle(player.loc.x-20, player.loc.y-20, 40, 40, portalPosX, portalPosY, portalRadius);
 
   if(done && gameStatus === "LEVEL_2"){
-    setTimeout(toLevel3, 10);
+    setTimeout(toLevel3, 50);
   }
   function toLevel3(){
     levelSound.play(0, 1, 0.4);
@@ -458,7 +464,7 @@ function level2(){
     player.loc.x = 100;
     player.loc.y = 500;
     portalPosX = 700;
-    portalPosY = 100;
+    portalPosY = 105;
     lava.loc.y = 1200;
     speed = 2;
 
@@ -497,7 +503,7 @@ function level1(){
   var done = collideRectCircle(player.loc.x-20, player.loc.y-20, 40, 40, portalPosX, portalPosY, portalRadius);
 
   if(done && gameStatus === "LEVEL_1"){
-    setTimeout(toLevel2, 10)
+    setTimeout(toLevel2, 50)
   }
   function toLevel2(){
     levelSound.play(0, 1, 0.4);
@@ -506,7 +512,7 @@ function level1(){
     player.loc.x = 50
     player.loc.y = 350
     portalPosX = 750;
-    portalPosY = 350;
+    portalPosY = 355;
     lava.loc.y = 1200;
     speed = 1.5
 
@@ -538,6 +544,7 @@ function menu(){
   textSize(100);
   fill(255,0,90, fade);
   text("neon", 400, 350);
+
 
   playButton();
   instructionsButton();
@@ -634,7 +641,7 @@ function keyPressed(){// if a key is pressed
   if(keyCode === 32){// if specifically the SPACEBAR is pressed
 
     if(doubleJump < 2){
-      jumpSound.play(0, 1, 0.2);
+      jumpSound.play(0, 1, 3);
       doubleJump++; //add one to doubleJump until it is 2
       player.forcey -= 20 //add a bottom force that is greater than gravvity to push the player upward
       /*
