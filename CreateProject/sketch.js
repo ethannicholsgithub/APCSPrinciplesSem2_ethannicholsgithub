@@ -225,6 +225,7 @@ function level7(){
     gameStatus = "LEVEL_8";
     player.loc.x = 50
     player.loc.y = 600
+	player.forcex = 0;
     portalPosX = 50;
     portalPosY = 80;
     lava.loc.y = 1200;
@@ -275,6 +276,7 @@ function level6(){
     gameStatus = "LEVEL_7";
     player.loc.x = 150
     player.loc.y = 55
+	player.forcex = 0;
     portalPosX = 150;
     portalPosY = 455;
     lava.loc.y = 1200;
@@ -322,6 +324,7 @@ function level5(){
     gameStatus = "LEVEL_6";
     player.loc.x = 200
     player.loc.y = 500
+	player.forcex = 0;
     portalPosX = 675;
     portalPosY = 60;
     lava.loc.y = 1200;
@@ -373,6 +376,7 @@ function level4(){
     gameStatus = "LEVEL_5";
     player.loc.x = 400
     player.loc.y = 455
+	player.forcex = 0;
     portalPosX = 400;
     portalPosY = 250;
     lava.loc.y = 1200;
@@ -419,6 +423,7 @@ function level3(){
     gameStatus = "LEVEL_4";
     player.loc.x = 100
     player.loc.y = 500
+	player.forcex = 0;
     portalPosX = 110;
     portalPosY = 105;
     lava.loc.y = 1200;
@@ -467,6 +472,7 @@ function level2(){
     gameStatus = "LEVEL_3";
     player.loc.x = 100;
     player.loc.y = 500;
+	player.forcex = 0;
     portalPosX = 700;
     portalPosY = 105;
     lava.loc.y = 1200;
@@ -515,6 +521,7 @@ function level1(){
     gameStatus = "LEVEL_2";
     player.loc.x = 50
     player.loc.y = 350
+	player.forcex = 0;
     portalPosX = 750;
     portalPosY = 355;
     lava.loc.y = 1200;
@@ -815,6 +822,7 @@ function playButton(){
 
       player.loc.x = 50;
       player.loc.y = 350;
+	  player.forcex = 0;
       portalPosX = 750;
       portalPosY = 350;
       lava.loc.y = 1200;
