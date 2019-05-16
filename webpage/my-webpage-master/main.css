@@ -1,0 +1,132 @@
+html {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 400;
+}
+
+body {
+    background-image: url(http://www.cssauthor.com/wp-content/uploads/2016/04/Free-High-Res-Geometric-Polygon-Backgrounds-3.jpg);
+    background-size: cover;
+    background-position: center top;
+    margin: 0px;
+    padding: 0px;
+}
+
+/*------front page-------*/
+
+h1 {
+    margin: 0px;
+    font-size: 50px;
+}
+
+.front-page {
+    margin-left: 150px;
+    padding-top: 50px
+}
+
+/*----About Me----*/
+
+.about-me {
+    margin-left: 150px;
+    padding-top: 50px
+}
+
+.current-position {
+    margin-top: 20px;
+    margin-left: 150px;
+    padding-top: 50px
+}
+
+/*----Portfolio----*/
+.portfolio {
+    margin-left: 150px;
+    padding-top: 50px
+}
+
+.disclamer {
+    opacity: 0.7;
+    margin-right: 40px;
+    color: grey;
+    text-align: center;
+    background-color: lightgrey;
+    padding: 150px;
+}
+
+.disclamer:hover {
+    transition: all 250ms ease-in-out;
+    opacity: 1.0;
+}
+
+/*---header---*/
+header {
+    background-color: #fff;
+    position: absolute;
+    height: 100%;
+    width: 85px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px 10px;
+
+}
+
+header nav {
+    margin-top: 30px;
+}
+
+header nav ul li {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    color: black;
+    list-style: none;
+}
+
+.items-side {
+    padding: 0px;
+}
+
+.items-side li :hover {
+    border: 1px solid #222;
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+/*---footer---*/
+
+.footer {
+    width: 100%;
+    background-color: #222;
+    padding: 10px 0px;
+    position: absolute;
+    bottom: 0px;
+    clear: both;
+}
+
+.footer nav ul {
+    float: left;
+}
+
+.footer nav ul li {
+    display: inline-block;
+    margin-left: 30px;;
+    list-style: none;
+}
+
+.footer nav ul li a {
+    padding: 10px;
+    color: #fff;
+    transition: all 250ms ease-in-out;
+}
+
+.contact-btns li :hover {
+    color: black;
+    background-color: #fff; 
+}
+
+a {
+    text-decoration: none;
+}
+
+.contact-list {
+    color: grey;
+}

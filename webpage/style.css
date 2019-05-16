@@ -1,0 +1,17 @@
+html{
+  font-family: 'Baloo Bhai', cursive;
+}
+
+#front-page{
+  text-align: center;
+}
+
+#logo{
+  padding-left: 40px;
+}
+
+.links{
+  
+  list-style-type: none;
+  padding-left: 50px;
+}
