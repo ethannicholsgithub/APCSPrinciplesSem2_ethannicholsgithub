@@ -685,7 +685,7 @@ function movement(){
 
 
 
-//--------------------------COLLISION DETECTION-----------------------\\
+//--------------------------COLLISION DETECTION-----------------------\\ helped with by Micheal constantini
 
 function collisions(player, platforms){
 
