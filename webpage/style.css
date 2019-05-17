@@ -13,16 +13,17 @@ html{
 .table{
   border: 10px;
   border-color: black;
-  padding: 50px;
+  padding-left: 0px;
   display: table;
 }
 
+
 .links li{
-  display: inline-block;
-  border: 10px solid blue;
-  border-radius:20px/10px;
+  margin-left: 20px;
+  border: 1px solid blue;
+  border-radius:40px/24px;
   text-align: center;
-  padding: 10px;
+  padding: 0px;
   display: inline;
 }
 
@@ -31,5 +32,3 @@ html{
   list-style-type: none;
   text-decoration: none;
 }
-
-
