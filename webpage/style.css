@@ -21,14 +21,23 @@ html{
 .links li{
   margin-left: 20px;
   border: 1px solid blue;
-  border-radius:40px/24px;
+  border-radius:15px;
   text-align: center;
-  padding: 0px;
+  padding: 3px;
+  padding-right: 15px;
+  padding-left: 15px;
   display: inline;
+}
+
+li:hover {
+  background: linear-gradient(to bottom right, rgb(63, 255, 251), rgb(255, 255, 255));
 }
 
 .links li a{
   color: black;
+  padding: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
   list-style-type: none;
   text-decoration: none;
 }
