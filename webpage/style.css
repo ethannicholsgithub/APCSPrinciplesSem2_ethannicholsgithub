@@ -6,21 +6,25 @@ html{
   text-align: center;
 }
 
-#logo{
-  padding-left: 40px;
+body{
+  margin: 0px;
+}
+
+header{
+  background: rgb(58,173,180);
+  background: linear-gradient(90deg, rgba(58,173,180,1) 0%, rgba(214,78,255,1) 52%, rgba(255,177,67,1) 100%);
+  margin: 0px;
 }
 
 .table{
   border: 10px;
-  border-color: black;
-  padding-left: 0px;
   display: table;
 }
 
 
 .links li{
   margin-left: 20px;
-  border: 1px solid blue;
+  border: 0px solid blue;
   border-radius:15px;
   text-align: center;
   padding: 3px;
@@ -30,7 +34,7 @@ html{
 }
 
 li:hover {
-  background: linear-gradient(to bottom right, rgb(63, 255, 251), rgb(255, 255, 255));
+  background: rgb(131,58,180);
 }
 
 .links li a{
