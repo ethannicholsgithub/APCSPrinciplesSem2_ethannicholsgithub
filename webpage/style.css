@@ -36,16 +36,17 @@ body{
   position: absolute;
   background-image: url(movie-banner-1_5.png);
   background-size: 100%;
+  background-repeat: no-repeat;
   left: 0;
   top: 0;
   height: 100%;
-  width: 300%;
-  animation: slideshow 10s linear infinite;
+  width: 301%;
+  animation: slideshow 40s linear infinite;
 }
 
 @keyframes slideshow {
   0%    { left: 0; }
-  100%  { left: -200%; }
+  100%  { left: -190.25%; }
 }
 
 header{
