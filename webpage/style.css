@@ -52,7 +52,7 @@ body{
 #info{
   margin-right: 300px;
   margin-left: 300px;
-  box-shadow: 2px 2px 3px grey;
+  box-shadow: 2px 2px 3px 2px grey;
   /* border: 1px solid grey; */
   border-radius: 15px;
   padding: 10px;
@@ -72,8 +72,10 @@ header{
 
 
 .links li{
-  margin-left: 20px;
-  border: 0px solid blue;
+  color: black;
+  padding: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
   border-radius:15px;
   text-align: center;
   padding: 3px;
@@ -83,15 +85,21 @@ header{
   transition: 0.3s;
 }
 
-.links li:hover {
-  background: rgb(131,58,180);
+.links li:hover{
+  color: white;
+  background: black;
 }
 
-.links li a{
+.links a{
+  list-style-type: none;
+  text-decoration: none;
+}
+
+/* .links li{
   color: black;
   padding: 3px;
   margin-left: 10px;
   margin-right: 10px;
   list-style-type: none;
   text-decoration: none;
-}
+} */

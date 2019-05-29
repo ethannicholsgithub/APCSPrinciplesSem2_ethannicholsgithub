@@ -28,9 +28,31 @@
     border-top-right-radius: 13px; 
 }
 
+
 #action_genre {
     background-color: red;
+    /* animation: slideshow 4s normal infinite;
+    animation-play-state: paused; */
 }
+
+#action_genre:hover{
+    /* animation-play-state: running; */
+}
+
+/* @keyframes slideshow{
+    0%{
+        background-image: url(john_wick.jpg);
+        background-repeat: no-repeat;
+    }
+    50%{
+        background-image: url(rogue.jpg);
+        background-repeat: no-repeat;
+    }
+    100%{
+        background-image: url(john_wick.jpg);
+        background-repeat: no-repeat;
+    }
+} */
 
 #horror_genre {
     background-color: blue;
