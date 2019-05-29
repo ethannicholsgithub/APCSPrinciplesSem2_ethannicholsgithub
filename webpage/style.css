@@ -83,7 +83,7 @@ header{
   transition: 0.3s;
 }
 
-li:hover {
+.links li:hover {
   background: rgb(131,58,180);
 }
 
