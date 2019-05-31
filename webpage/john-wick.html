@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai" rel="stylesheet">
+
+  <header>
+
+    <script type="text/javascript" > </script>
+
+    <script>
+
+    $(function() {
+
+
+      var movies = [];
+
+      $.getJSON('movieinfo.json', function(data) {
+        $.each(data.person, function(i, f) {
+          var tblRow = "<tr>" + "<td>" + f.firstName + "</td>" +
+          "<td>" + f.lastName + "</td>" + "<td>" + f.job + "</td>" + "<td>" + f.roll + "</td>" + "</tr>"
+          $(tblRow).appendTo("#userdata tbody");
+        });
+
+      });
+
+    });
+  </script>
+
+
+  <div id = "page_links">
+    <nav class = "table">
+      <ul class = "links">
+        <a href= "index.html"><li>Home</li></a>
+        <a href= "genres.html"><li>Genres</li></a>
+        <a href= "about.html"><li>About</li></a>
+      </ul>
+    </nav>
+  </div>
+
+</header>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

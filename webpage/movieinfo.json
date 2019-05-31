@@ -1,0 +1,10 @@
+{
+  "movies":[
+    {
+      "movie_title": "John Wick",
+      "rating": "R",
+      "IMDb_rating": "7.4",
+      "plot": ""
+    }
+  ]
+}
