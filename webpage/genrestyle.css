@@ -32,6 +32,9 @@
     border-top-right-radius: 13px;
 }
 
+#preload{
+    display: none;
+  }
 
 #action_genre {
     background-image: url(john_wick.jpg);
@@ -39,17 +42,37 @@
 }
 
 #horror_genre {
-    background-image: url(john_wick.jpg);
+    background-image: url(hereditary.jpg);
     background-size: 350px 500px;
 }
 
 #drama_genre {
-    background-image: url(john_wick.jpg);
+    background-image: url(godfather.jpg);
     background-size: 350px 500px;
 }
 
 #documentary_genre {
     background-image: url(john_wick.jpg);
+    background-size: 350px 500px;
+}
+
+#adventure_genre {
+    background-image: url(rola.jpg);
+    background-size: 350px 500px;
+}
+
+#fantasy_genre {
+    background-image: url(lotr.jpg);
+    background-size: 350px 500px;
+}
+
+#scifi_genre {
+    background-image: url(prometheus.jpg);
+    background-size: 350px 500px;
+}
+
+#hero_genre {
+    background-image: url(endgame.jpg);
     background-size: 350px 500px;
 }
 
@@ -84,64 +107,211 @@
 }
 
 #horror_genre:hover{
-    animation: horror_slideshow 4s normal infinite;
+    animation: horror_slideshow 10s normal infinite;
     animation-play-state: running;
 }
 
 @keyframes horror_slideshow{
     0%{
-        background-image: url(john_wick.jpg);
-        background-repeat: no-repeat;
+        background-image: url(hereditary.jpg);
     }
-    50%{
-        background-image: url(rogue.jpg);
+    20%{
+        background-image: url(get_out.jpg);
         background-size: 350px 500px;
-        background-repeat: no-repeat;
+    }
+    40%{
+        background-image: url(alien.jpg);
+        background-size: 350px 500px;
+    }
+    60%{
+        background-image: url(babadook.jpg);
+        background-size: 350px 500px;
+    }
+    80%{
+        background-image: url(the_witch.jpg);
+        background-size: 350px 500px;
     }
     100%{
-        background-image: url(john_wick.jpg);
-        background-repeat: no-repeat;
+        background-image: url(hereditary.jpg);
     }
 }
 
 #drama_genre:hover{
-    animation: drama_slideshow 4s normal infinite;
+    animation: drama_slideshow 10s normal infinite;
     animation-play-state: running;
 }
 
 @keyframes drama_slideshow{
     0%{
-        background-image: url(john_wick.jpg);
-        background-repeat: no-repeat;
+        background-image: url(godfather.jpg);
     }
-    50%{
-        background-image: url(rogue.jpg);
+    20%{
+        background-image: url(arrival.jpg);
         background-size: 350px 500px;
-        background-repeat: no-repeat;
+    }
+    40%{
+        background-image: url(pulp_fiction.jpg);
+        background-size: 350px 500px;
+    }
+    60%{
+        background-image: url(blackkklansman.jpg);
+        background-size: 350px 500px;
+    }
+    80%{
+        background-image: url(quiet_place.jpg);
+        background-size: 350px 500px;
     }
     100%{
-        background-image: url(john_wick.jpg);
-        background-repeat: no-repeat;
+        background-image: url(godfather.jpg);
     }
 }
 
 #documentary_genre:hover{
-    animation: documentary_slideshow 4s normal infinite;
+    animation: documentary_slideshow 10s normal infinite;
     animation-play-state: running;
 }
 
 @keyframes documentary_slideshow{
     0%{
         background-image: url(john_wick.jpg);
-        background-repeat: no-repeat;
     }
-    50%{
+    20%{
+        background-image: url(mad_max.jpg);
+        background-size: 350px 500px;
+    }
+    40%{
+        background-image: url(dunkirk.jpg);
+        background-size: 350px 500px;
+    }
+    60%{
         background-image: url(rogue.jpg);
-        background-repeat: no-repeat;
+        background-size: 350px 500px;
+    }
+    80%{
+        background-image: url(rpo.jpg);
         background-size: 350px 500px;
     }
     100%{
         background-image: url(john_wick.jpg);
-        background-repeat: no-repeat;
+    }
+}
+
+#adventure_genre:hover{
+    animation: adventure_slideshow 10s normal infinite;
+    animation-play-state: running;
+}
+
+@keyframes adventure_slideshow{
+    0%{
+        background-image: url(rola.jpg);
+    }
+    20%{
+        background-image: url(interstellar.jpg);
+        background-size: 350px 500px;
+    }
+    40%{
+        background-image: url(back_to_future.jpg);
+        background-size: 350px 500px;
+    }
+    60%{
+        background-image: url(jurassic_park.jpg);
+        background-size: 350px 500px;
+    }
+    80%{
+        background-image: url(martian.jpg);
+        background-size: 350px 500px;
+    }
+    100%{
+        background-image: url(rola.jpg);
+    }
+}
+
+#fantasy_genre:hover{
+    animation: fantasy_slideshow 10s normal infinite;
+    animation-play-state: running;
+}
+
+@keyframes fantasy_slideshow{
+    0%{
+        background-image: url(lotr.jpg);
+    }
+    20%{
+        background-image: url(star_wars.jpg);
+        background-size: 350px 500px;
+    }
+    40%{
+        background-image: url(harry_potter.jpg);
+        background-size: 350px 500px;
+    }
+    60%{
+        background-image: url(star_wars_3.jpg);
+        background-size: 350px 500px;
+    }
+    80%{
+        background-image: url(hobbit.jpg);
+        background-size: 350px 500px;
+    }
+    100%{
+        background-image: url(lotr.jpg);
+    }
+}
+
+#scifi_genre:hover{
+    animation: scifi_slideshow 10s normal infinite;
+    animation-play-state: running;
+}
+
+@keyframes scifi_slideshow{
+    0%{
+        background-image: url(prometheus.jpg);
+    }
+    20%{
+        background-image: url(primer.jpg);
+        background-size: 350px 500px;
+    }
+    40%{
+        background-image: url(gravity.jpg);
+        background-size: 350px 500px;
+    }
+    60%{
+        background-image: url(snowpiercer.jpg);
+        background-size: 350px 500px;
+    }
+    80%{
+        background-image: url(ldr.jpg);
+        background-size: 350px 500px;
+    }
+    100%{
+        background-image: url(prometheus.jpg);
+    }
+}
+
+#hero_genre:hover{
+    animation: superhero_slideshow 10s normal infinite;
+    animation-play-state: running;
+}
+
+@keyframes superhero_slideshow{
+    0%{
+        background-image: url(endgame.jpg);
+    }
+    20%{
+        background-image: url(black_panther.jpg);
+        background-size: 350px 500px;
+    }
+    40%{
+        background-image: url(logan.jpg);
+        background-size: 350px 500px;
+    }
+    60%{
+        background-image: url(deadpool.jpg);
+        background-size: 350px 500px;
+    }
+    80%{
+        background-image: url(gotg.jpg);
+        background-size: 350px 500px;
+    }
+    100%{
+        background-image: url(endgame.jpg);
     }
 }
