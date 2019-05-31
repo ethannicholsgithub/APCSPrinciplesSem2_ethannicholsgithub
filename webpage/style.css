@@ -7,6 +7,10 @@ html{
   display: none;
 }
 
+#preload{
+  display: none;
+}
+
 body{
   margin: 0px;
   height: 100%

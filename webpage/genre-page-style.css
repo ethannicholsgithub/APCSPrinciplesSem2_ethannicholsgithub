@@ -32,10 +32,6 @@
     border-top-right-radius: 13px;
 }
 
-#preload{
-    display: none;
-  }
-
 #action_genre {
     background-image: url(images/john_wick.jpg);
     background-size: 350px 500px;
@@ -68,6 +64,10 @@
 
 #hero_genre {
     background-image: url(images/endgame.jpg);
+    background-size: 350px 500px;
+}
+#fred_movie {
+    background-image: url(images/fred_movie.jpg);
     background-size: 350px 500px;
 }
 
