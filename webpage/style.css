@@ -3,19 +3,6 @@ html{
   height: 100%;
 }
 
-
-/* #preload-01 { background: url(movie-banner-1_5.png) no-repeat -9999px -9999px; }
-#preload-02 { background: url(john_wick.jpg) no-repeat -9999px -9999px; }
-#preload-03 { background: url(rogue.jpg) no-repeat -9999px -9999px; }
-#preload-04 { background: url(mad_max.jpg) no-repeat -9999px -9999px; }
-#preload-05 { background: url(dunkirk.jpg) no-repeat -9999px -9999px; }
-#preload-06 { background: url(rpo.jpg) no-repeat -9999px -9999px; } * /
-/* 
-#preload{
-  display: none;
-}
-*/
-
 #preload2{
   display: none;
 }
@@ -51,7 +38,7 @@ body{
 
 #background-images{
   position: absolute;
-  background-image: url(movie-banner.png);
+  background-image: url(images/movie-banner.png);
   background-size: 100%;
   background-repeat: no-repeat;
   left: 0;
@@ -111,12 +98,3 @@ header{
   list-style-type: none;
   text-decoration: none;
 }
-
-/* .links li{
-  color: black;
-  padding: 3px;
-  margin-left: 10px;
-  margin-right: 10px;
-  list-style-type: none;
-  text-decoration: none;
-} */
