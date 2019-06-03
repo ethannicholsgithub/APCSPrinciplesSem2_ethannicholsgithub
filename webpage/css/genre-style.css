@@ -77,3 +77,27 @@
   background-image: url(images/saving-private-ryan.jpg);
   background-size: 275px 400px;
 }
+#rpo{
+  background-image: url(images/rpo.jpg);
+  background-size: 275px 400px;
+}
+#the-revenant{
+  background-image: url(images/the_revenant.jpg);
+  background-size: 275px 400px;
+}
+#dark-knight{
+  background-image: url(images/the_dark_knight.jpg);
+  background-size: 275px 400px;
+}
+#kong_skull_island{
+  background-image: url(images/kong.jpg);
+  background-size: 275px 400px;
+}
+#hereditary{
+  background-image: url(images/hereditary.jpg);
+  background-size: 275px 400px;
+}
+#get_out{
+  background-image: url(images/get_out.jpg);
+  background-size: 275px 400px;
+}

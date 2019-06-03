@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/moviestyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai" rel="stylesheet">
+    <script type="text/javascript" src="../movieinfo.js"></script>
+
+  <header>
+
+
+    <div id="page_links">
+      <nav class="table">
+        <ul class="links">
+          <a href="../index.html">
+            <li>Home</li>
+          </a>
+          <a href="genres.html">
+            <li>Genres</li>
+          </a>
+          <a href="about.html">
+            <li>About</li>
+          </a>
+        </ul>
+      </nav>
+    </div>
+
+  </header>
+</head>
+
+<body>
+  <div id = "info_container">
+    <div class="poster">
+      <img src="../css/images/hereditary.jpg" width="350px" height="500px">
+    </div>
+    <div class="asdf">
+      <h2 id="movie"></h2>
+      <h2 id="rating"></h2>
+      <h2 id="imdb"></h2>
+      <h2 id="plot"></h2>
+      <h2 id="review"></h2>
+    </div>
+  </div>
+
+  <div class = "trailer">
+      <iframe id = "trailer-source" width = "720" height="405" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    var movie_info = movies.hereditary;
+
+    document.getElementById("movie").innerHTML = "Title: " + movie_info.title;
+    document.getElementById("rating").innerHTML = "Rating: " + movie_info.rating;
+    document.getElementById("imdb").innerHTML = "IMDb rating: " + movie_info.IMDb_rating + " / 10";
+    document.getElementById("plot").innerHTML = "Plot: " + movie_info.plot; 
+    document.getElementById("review").innerHTML = "Review:" + " " + movie_info.review; 
+    document.getElementById("trailer-source").src = movie_info.trailerUrl; 
+  </script>
+
+  <div>
+    <a class ="backbutton" href="horror-genre.html">
+      <h3>Back</h3>
+    </a>
+  </div>
+
+</body>
+
+</html>
